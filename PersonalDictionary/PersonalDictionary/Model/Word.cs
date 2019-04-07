@@ -1,18 +1,25 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PersonalDictionary
 {
-    class Word
+    [Table("words")]
+    public class Word
     {
-        public string turkish { get; set; }
-        public string english { get; set; }
+        public string Turkish { get; set; }
+        public string English { get; set; }
 
         public Word(string turkish, string english)
         {
-            this.turkish = turkish;
-            this.english = english;
+            this.Turkish = turkish;
+            this.English = english;
+        }
+
+        public Word()
+        {
+
         }
     }
 }

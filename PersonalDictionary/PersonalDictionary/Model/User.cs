@@ -6,15 +6,22 @@ using System.Text;
 namespace PersonalDictionary
 {
     [Table("users")]
-    class User
+    public class User
     {
-        public string email { get; set; }
-        public string password { get; set; }
+        [PrimaryKey]
+        public string Email { get; set; }
+
+        public string Password { get; set; }
 
         public User(string email, string password)
         {
-            this.email = email;
-            this.password = password;
+            this.Email = email;
+            this.Password = password;
+        }
+
+        public User()
+        {
+
         }
 
 

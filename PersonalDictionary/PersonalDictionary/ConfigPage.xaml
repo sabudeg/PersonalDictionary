@@ -5,10 +5,26 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             
-            <Button x:Name="newWord" Text="ADD A NEW WORD"/>
-            <Button x:Name="updateWord" Text="UPDATE A WORD"/>
-            <Button x:Name="deleteWord" Text="DELETE A WORD"/>
+            <Button x:Name="newWord" Text="ADD A NEW WORD" Clicked="NewWord_Clicked"/>
+            <StackLayout x:Name="addView" IsVisible="False" BackgroundColor="LightBlue">
+                <Entry x:Name="addTr" Placeholder="turkish"/>
+                <Entry x:Name="addEn" Placeholder="english"/>
+                <Button x:Name="addButton" Text="Add" WidthRequest="100" Clicked="addButton_Clicked"/>
+            </StackLayout>
             
+            <Button x:Name="updateWord" Text="UPDATE A WORD" Clicked="UpdateWord_Clicked"/>
+            <StackLayout x:Name="updateView" IsVisible="False" WidthRequest="200" BackgroundColor="LightBlue">
+                <Entry Placeholder="turkish"/>
+                <Entry Placeholder="english"/>
+                <Button x:Name="updateButton" Text="Update" WidthRequest="100" Clicked="UpdateButton_Clicked" />
+            </StackLayout>
+            
+            <Button x:Name="deleteWord" Text="DELETE A WORD" Clicked="DeleteWord_Clicked"/>
+            <StackLayout x:Name="deleteView" IsVisible="False" BackgroundColor="LightBlue">
+                <Entry Placeholder="turkish"/>
+                <Entry Placeholder="english"/>
+                <Button x:Name="deleteButton" Text="Delete" WidthRequest="100" Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
                 
         </StackLayout>
     </ContentPage.Content>

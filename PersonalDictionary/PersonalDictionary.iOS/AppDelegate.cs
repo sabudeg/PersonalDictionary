@@ -23,8 +23,8 @@ namespace PersonalDictionary.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
-
+            string dbPath = FileAccessHelper.GetLocalFilePath("personaldictionary.db3");
+            LoadApplication(new App(dbPath));
             return base.FinishedLaunching(app, options);
         }
     }

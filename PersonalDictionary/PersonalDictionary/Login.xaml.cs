@@ -9,19 +9,18 @@ using Xamarin.Forms.Xaml;
 
 using SQLite;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace PersonalDictionary
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
-
-        static SQLiteConnection connection;
+        public SQLiteConnection conn;
 
         public Login()
         {
             InitializeComponent();
-
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)
@@ -48,10 +47,25 @@ namespace PersonalDictionary
                     emailerror.IsVisible = false;
                     email.BackgroundColor = Color.Transparent;
 
-                    if (Regex.IsMatch(password.Text, passwordPattern)){
-                        return true;
+                    if (Regex.IsMatch(password.Text, passwordPattern))
+                    {
+                        try
+                        {
+                            conn.Insert(user.Email, user.Password);
+                            Debug.WriteLine("new user");
+                            //TOAST NEW USER 
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine("user has already exists");
+                            //TOAST USER EXISTS
+                            return true;
+                        }
+
                     }
-                    else {
+                    else
+                    {
                         passworderror.IsVisible = true;
                         password.BackgroundColor = Color.Red;
                         password.Focus();

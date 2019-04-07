@@ -19,7 +19,8 @@ namespace PersonalDictionary.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            string dbPath = FileAccessHelper.GetLocalFilePath("personaldictionary.db3");
+            LoadApplication(new App(dbPath));
         }
     }
 }

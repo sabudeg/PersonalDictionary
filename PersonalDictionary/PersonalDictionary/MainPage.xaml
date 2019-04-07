@@ -16,7 +16,7 @@
             <Label x:Name="translatedWord" Text="translatedword" IsVisible="True" Margin="20"></Label>
             
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Padding="5">
-                <Button x:Name="switchButton" Text="TR > EN" WidthRequest="190"/>
+                <Button x:Name="switchButton" Text="TR > EN" WidthRequest="190" Clicked="SwitchButton_Clicked"/>
                 <Button x:Name="configButton" Text="CONFIG" WidthRequest="190" Clicked="ConfigButton_Clicked"/>
             </StackLayout>
 

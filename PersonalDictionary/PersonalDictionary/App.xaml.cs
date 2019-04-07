@@ -2,16 +2,21 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PersonalDictionary
 {
     public partial class App : Application
     {
-        public App()
+        public static DictionaryDatabase DictionaryDb { get; private set; }
+
+        public App(string dbPath)
         {
             InitializeComponent();
 
+            DictionaryDb = new DictionaryDatabase(dbPath);
+
             MainPage = new NavigationPage(new Login());
+
         }
 
         protected override void OnStart()
