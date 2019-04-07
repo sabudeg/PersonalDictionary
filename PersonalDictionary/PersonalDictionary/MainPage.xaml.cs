@@ -11,7 +11,19 @@ namespace PersonalDictionary
     {
         public MainPage()
         {
-            InitializeComponent();
+                InitializeComponent();
+
+            
+        }
+
+        private void SearchButton_Clicked(object sender, EventArgs e)
+        {
+            searchButton.Focus();
+        }
+
+        private void ConfigButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ConfigPage());
         }
     }
 }

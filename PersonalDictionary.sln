@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalDictionary.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalDictionary.iOS", "PersonalDictionary\PersonalDictionary.iOS\PersonalDictionary.iOS.csproj", "{3D6E8F2D-08B9-4F74-BDF8-4320AE46C9DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalDictionary", "PersonalDictionary\PersonalDictionary\PersonalDictionary.csproj", "{EEC716A2-7163-4880-BB47-987D93DB292E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalDictionary", "PersonalDictionary\PersonalDictionary\PersonalDictionary.csproj", "{EEC716A2-7163-4880-BB47-987D93DB292E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

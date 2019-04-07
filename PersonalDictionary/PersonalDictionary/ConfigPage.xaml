@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalDictionary.ConfigPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            
+            <Button x:Name="newWord" Text="ADD A NEW WORD"/>
+            <Button x:Name="updateWord" Text="UPDATE A WORD"/>
+            <Button x:Name="deleteWord" Text="DELETE A WORD"/>
+            
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

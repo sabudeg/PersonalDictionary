@@ -3,12 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PersonalDictionary"
              x:Class="PersonalDictionary.MainPage">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10" >
+                <Entry x:Name="searchEntry" Placeholder="search for word" HorizontalOptions="FillAndExpand"/>
 
+                <ImageButton x:Name="searchButton" Source="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-square/512/Button_15-512.png" HorizontalOptions="End" WidthRequest="50"  Clicked="SearchButton_Clicked"/>
+
+            </StackLayout>
+
+            <Label x:Name="translatedWord" Text="translatedword" IsVisible="True" Margin="20"></Label>
+            
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Padding="5">
+                <Button x:Name="switchButton" Text="TR > EN" WidthRequest="190"/>
+                <Button x:Name="configButton" Text="CONFIG" WidthRequest="190" Clicked="ConfigButton_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

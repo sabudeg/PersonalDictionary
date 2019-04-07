@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalDictionary.Login">
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+         
+            <Label Text="Email: "/>
+            <Entry x:Name="email" Placeholder="email"/>
+            <Label x:Name="emailerror" Text="Email is not valid." IsVisible="False"/>
+
+            <Label Text="Password:  "/>
+            <Entry x:Name="password" Placeholder="password"  />
+            <Label x:Name="passworderror" Text="Password is not valid." IsVisible="False"/>
+
+            <Button x:Name="loginButton" Text="sıgn ın or regıster" Clicked="LoginButton_Clicked"/>
+            <Label x:Name="nullEntry" Text="Fill the blank areas" IsVisible="False"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
