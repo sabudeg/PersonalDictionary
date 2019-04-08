@@ -17,6 +17,7 @@ namespace PersonalDictionary
             conn = new SQLiteConnection(dbPath);
             conn.CreateTable<User>();
             conn.CreateTable<Word>();
+ 
         }
 
         public void AddNewWord(Word w)
@@ -43,9 +44,17 @@ namespace PersonalDictionary
         {
             try
             {
-                conn.Delete(w);
+                Debug.Write(App.DictionaryDb.conn.Query<Word>("Select * From Words (Turkish, English) VALUES (?, ?)", w.Turkish, w.English).ToString());
+
+                App.DictionaryDb.conn.Query<Word>("Delete From Words (Turkish, English) VALUES (?, ?)", w.Turkish, w.English);
+
+
+               // conn.Delete(w);
+                Debug.WriteLine("DELETED");
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                Debug.WriteLine("DELETE ERROR");
+            }
         }
 
         public bool AddNewUser(string email, string password)

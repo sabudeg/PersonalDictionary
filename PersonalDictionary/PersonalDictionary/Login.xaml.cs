@@ -51,14 +51,16 @@ namespace PersonalDictionary
                     {
                         try
                         {
-                            conn.Insert(user.Email, user.Password);
+                            Debug.WriteLine( conn.Table<User>().Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault().ToString() ); 
+
+                            conn.Insert(user);
                             Debug.WriteLine("new user");
                             //TOAST NEW USER 
                             return true;
                         }
-                        catch (Exception ex)
+                        catch (Exception e)
                         {
-                            Debug.WriteLine("user has already exists");
+                            Debug.WriteLine("user already exists");
                             //TOAST USER EXISTS
                             return true;
                         }

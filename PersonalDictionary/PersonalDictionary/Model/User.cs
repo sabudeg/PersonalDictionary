@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PersonalDictionary
 {
-    [Table("users")]
+    [Table("Users")]
     public class User
     {
         [PrimaryKey]

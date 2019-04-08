@@ -15,6 +15,7 @@ namespace PersonalDictionary
 
             DictionaryDb = new DictionaryDatabase(dbPath);
 
+            //MainPage = new NavigationPage(new MainPage());
             MainPage = new NavigationPage(new Login());
 
         }

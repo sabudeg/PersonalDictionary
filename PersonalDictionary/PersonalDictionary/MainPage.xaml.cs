@@ -26,14 +26,17 @@ namespace PersonalDictionary
             {
                 case "TR > EN":
                     {
-                        Word w = conn.Query<Word>("Select * From [Word] WHERE Turkish=?, input").FirstOrDefault();
+
+                        //translatedWord.Text = conn.Table<Words>().Where(k => k.Turkish == input).FirstOrDefault().English;
+                        Word w = conn.Query<Word>("Select * From Words WHERE Turkish=?", input).FirstOrDefault();
                         translatedWord.Text = w.English;
                         break;
                     }
                 case "EN > TR":
                     {
-                        Word w = conn.Query<Word>("Select * From [Word] WHERE English=?, input").FirstOrDefault();
-                        translatedWord.Text = w.Turkish;
+                        translatedWord.Text = conn.Table<Word>().Where(k => k.English == input).FirstOrDefault().Turkish;
+                        //Word w = conn.Query<Word>("Select * From [Word] WHERE English=?, input").FirstOrDefault();
+                        //translatedWord.Text = w.Turkish;
                         break;
                     }
             }

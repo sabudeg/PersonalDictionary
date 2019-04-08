@@ -5,10 +5,13 @@ using System.Text;
 
 namespace PersonalDictionary
 {
-    [Table("words")]
+    [Table("Words")]
     public class Word
     {
+        [MaxLength(250)]
         public string Turkish { get; set; }
+
+        [MaxLength(250)]
         public string English { get; set; }
 
         public Word(string turkish, string english)
