@@ -10,8 +10,6 @@ namespace PersonalDictionary
 {
     public partial class MainPage : ContentPage
     {
-        public SQLiteConnection conn;
-
         public MainPage()
         {
                 InitializeComponent();
@@ -27,15 +25,15 @@ namespace PersonalDictionary
                 case "TR > EN":
                     {
 
-                        //translatedWord.Text = conn.Table<Words>().Where(k => k.Turkish == input).FirstOrDefault().English;
-                        Word w = conn.Query<Word>("Select * From Words WHERE Turkish=?", input).FirstOrDefault();
+                        //translatedWord.Text = App.DictionaryDb.conn.Table<Words>().Where(k => k.Turkish == input).FirstOrDefault().English;
+                        Word w = App.DictionaryDb.conn.Query<Word>("Select * From Words WHERE Turkish=?", input).FirstOrDefault();
                         translatedWord.Text = w.English;
                         break;
                     }
                 case "EN > TR":
                     {
-                        translatedWord.Text = conn.Table<Word>().Where(k => k.English == input).FirstOrDefault().Turkish;
-                        //Word w = conn.Query<Word>("Select * From [Word] WHERE English=?, input").FirstOrDefault();
+                        translatedWord.Text = App.DictionaryDb.conn.Table<Word>().Where(k => k.English == input).FirstOrDefault().Turkish;
+                        //Word w = App.DictionaryDb.conn.Query<Word>("Select * From [Word] WHERE English=?, input").FirstOrDefault();
                         //translatedWord.Text = w.Turkish;
                         break;
                     }
