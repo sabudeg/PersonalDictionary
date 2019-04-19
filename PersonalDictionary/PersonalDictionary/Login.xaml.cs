@@ -51,9 +51,9 @@ namespace PersonalDictionary
                     {
                         try
                         {
-                            Debug.WriteLine( conn.Table<User>().Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault().ToString() ); 
+                            Debug.WriteLine( App.DictionaryDb.conn.Table<User>().Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault().ToString() ); 
 
-                            conn.Insert(user);
+                            App.DictionaryDb.conn.Insert(user);
                             Debug.WriteLine("new user");
                             //TOAST NEW USER 
                             return true;
