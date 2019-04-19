@@ -16,7 +16,6 @@ namespace PersonalDictionary
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
-        public SQLiteConnection conn;
 
         public Login()
         {
